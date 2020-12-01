@@ -1,6 +1,8 @@
 # Graphql Uno
 Graphql directives to the rescue
 
+Examples to show how graphql directives can help frontend to be light and secure.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
