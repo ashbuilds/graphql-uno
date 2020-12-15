@@ -3,11 +3,16 @@ import { loadFilesSync } from '@graphql-tools/load-files';
 import { mergeTypeDefs, mergeResolvers } from '@graphql-tools/merge';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
-const typesArray = loadFilesSync(join(__dirname, './types/*.graphql'));
-const resolversArray = loadFilesSync(join(__dirname, './resolvers'));
+const get = (path) => loadFilesSync(join(__dirname, path));
 
-const typeDefs = mergeTypeDefs(typesArray);
-const resolvers = mergeResolvers(resolversArray);
+const localTypes = get('./schema/**/*.graphql');
+const localResolvers = get('./schema/**/*.js');
+const directives = get('./directives/**/*.graphql');
+const schemaTransforms = get('./directives/**/*.js');
 
-export default makeExecutableSchema({ typeDefs, resolvers });
+const typeDefs = mergeTypeDefs([...localTypes, ...directives]);
+const resolvers = mergeResolvers([...localResolvers]);
 
+const schema = makeExecutableSchema({ typeDefs, resolvers, schemaTransforms });
+
+export default schema;

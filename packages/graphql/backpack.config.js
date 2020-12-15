@@ -2,8 +2,8 @@ const { resolve } = require('path');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 
 const ENTRY_PATH = resolve(__dirname, './index.js');
-const TYPES_PATH = resolve(__dirname, './types/*.graphql');
-const RESOLVERS_PATH = resolve(__dirname, './resolvers/*.js');
+const SCHEMA_PATH = resolve(__dirname, './schema/**/*');
+const DIRECTIVES_PATH = resolve(__dirname, './directives/**/*');
 
 const WATCH_OPTIONS = {
   poll: 500,
@@ -11,7 +11,7 @@ const WATCH_OPTIONS = {
 };
 
 module.exports = {
-  webpack: (config, options, webpack) => {
+  webpack: (config) => {
 
     config.entry.main = [
       ENTRY_PATH,
@@ -20,8 +20,8 @@ module.exports = {
     config.plugins.push(
         new ExtraWatchWebpackPlugin({
           files: [
-            TYPES_PATH,
-            RESOLVERS_PATH,
+            SCHEMA_PATH,
+            DIRECTIVES_PATH,
           ],
         }),
     );

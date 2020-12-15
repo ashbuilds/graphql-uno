@@ -1,0 +1,10 @@
+enum _STRING_CASES {
+    upperCase
+    lowerCase
+}
+
+input _STRING {
+    case: _STRING_CASES
+}
+
+#directive @string(format: _STRING_CASES) on FIELD_DEFINITION | FIELD | SCALAR

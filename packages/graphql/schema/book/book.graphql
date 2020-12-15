@@ -1,9 +1,12 @@
 type Book {
-    name: String
+    id: ID
+    title: String
     description: String
     price: Float
+    publishedAt: Date @date #@string
 }
 
 type Query {
+    book: Book
     books: [Book]
 }

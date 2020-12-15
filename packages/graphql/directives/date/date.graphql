@@ -1,0 +1,7 @@
+input _DATE {
+    format: String
+}
+
+directive @date(date: _DATE) on FIELD_DEFINITION | FIELD | SCALAR
+
+scalar Date
