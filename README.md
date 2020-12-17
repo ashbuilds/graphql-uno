@@ -1,5 +1,5 @@
 # Graphql Uno
-Graphql directives to the rescue
+## Graphql directives to the rescue
 
 Examples to show how graphql directives can help frontend to be light and secure.
 ![GraphQL Meetup](packages/web/public/poster.png)
