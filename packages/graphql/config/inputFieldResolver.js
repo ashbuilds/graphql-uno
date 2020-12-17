@@ -1,11 +1,11 @@
 /* eslint-disable no-param-reassign */
-import {
+const {
   GraphQLScalarType,
   isWrappingType,
   isNamedType,
   GraphQLNonNull,
   GraphQLList,
-} from 'graphql';
+} = require('graphql');
 
 /**
  * A validation type is injected from a validation directive and serves the purpose of
@@ -14,7 +14,7 @@ import {
  * Unfortunately input types don't currently have a "resolve" mechanism from directives
  * so this is a workaround
  */
-export default class InputFieldResolver extends GraphQLScalarType {
+class InputFieldResolver extends GraphQLScalarType {
   /**
      * Create the wrapper type and validation handler for the constraint on the type
      */
@@ -75,3 +75,5 @@ export default class InputFieldResolver extends GraphQLScalarType {
     });
   }
 }
+
+module.exports = InputFieldResolver

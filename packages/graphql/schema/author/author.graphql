@@ -1,11 +1,20 @@
 type Author {
-    id: ID
+    id: ID @hashed
     name: String
     email: String
     books: [Book]
 }
 
+input AuthorInput {
+    name: String @validate(minLength: 5, maxLength: 20)
+    email: String @validate(type: "email")
+}
+
 type Query {
     author: Author
     authors: [Author]
+}
+
+type Mutation {
+    addAuthor(input: AuthorInput! @validate): Author
 }

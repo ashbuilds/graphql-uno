@@ -11,7 +11,10 @@
     "apollo-server": "2.19.0",
     "backpack-core": "0.8.4",
     "graphql": "14.7.0",
-    "moment": "2.29.1"
+    "moment": "2.29.1",
+    "hashids": "2.2.3",
+    "moment-range": "4.0.2",
+    "email-validator": "2.0.4"
   },
   "scripts": {
     "dev": "backpack"

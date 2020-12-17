@@ -12,18 +12,17 @@ const WATCH_OPTIONS = {
 
 module.exports = {
   webpack: (config) => {
-
     config.entry.main = [
       ENTRY_PATH,
-    ]
+    ];
 
     config.plugins.push(
-        new ExtraWatchWebpackPlugin({
-          files: [
-            SCHEMA_PATH,
-            DIRECTIVES_PATH,
-          ],
-        }),
+      new ExtraWatchWebpackPlugin({
+        files: [
+          SCHEMA_PATH,
+          DIRECTIVES_PATH,
+        ],
+      }),
     );
 
     config.watchOptions = WATCH_OPTIONS;

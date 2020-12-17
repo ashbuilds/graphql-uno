@@ -1,0 +1,2 @@
+"""@validate directive should be applied in input field defination to take effect"""
+directive @validate(type: String, maxLength: Int, minLength: Int) on INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
