@@ -1,0 +1,8 @@
+query getBook($id: ID!) {
+    book(id: $id){
+        id
+        title(string:{case: upperCase})
+        description
+        publishedAt(date:{format:"MMM, DD YYYY"})
+    }
+}

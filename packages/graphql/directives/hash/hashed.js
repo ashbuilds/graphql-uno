@@ -10,11 +10,11 @@ function directive(name) {
         const { resolve = defaultFieldResolver } = fieldConfig;
         fieldConfig.resolve = async function (source, args, context, info) {
           const result = await resolve(source, args, context, info);
-          console.log('result : ', result);
           return hashids.encode([result]);
         };
         return fieldConfig;
       }
+      return fieldConfig;
     },
   });
 }

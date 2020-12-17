@@ -12,7 +12,7 @@ const Home = () => (
       <h1 className={styles.title}>
         Welcome to
         {' '}
-        <a href="https://nextjs.org">Next.js!</a>
+        <a href="https://www.meetup.com/GraphQL-Bangkok/events/274861245/">GraphQL BKK 9.0</a>
       </h1>
 
       <p className={styles.description}>

@@ -18,6 +18,7 @@ function directive(name) {
         });
         return resolve(source, { ...args, ...ids }, context, info);
       };
+      return fieldConfig;
     },
   });
 }

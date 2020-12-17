@@ -22,6 +22,9 @@ module.exports = {
     books: () => Array.from('1234').map((i) => ({ id: i })),
   },
   Mutation: {
-    updateBook: (_root, { id }) => ({ id }),
+    updateBook: (_root, { id }) => {
+      console.log('updateBook.id: ', { id });
+      return { id };
+    },
   },
 };
