@@ -1,6 +1,7 @@
 const { mapSchema, MapperKind, getDirectives } = require('@graphql-tools/utils');
 const { defaultFieldResolver } = require('graphql');
 const moment = require('../../config/moment');
+require('moment/min/locales.min');
 
 function directive(name) {
   const typeDirectiveArgumentMaps = {};
@@ -21,6 +22,11 @@ function directive(name) {
         const { resolve = defaultFieldResolver } = fieldConfig;
         fieldConfig.resolve = async function (source, { date = {}, ...args }, context, info) {
           const result = await resolve(source, args, context, info);
+          if (date.locale) {
+            moment.locale(date.locale);
+          } else {
+            moment.locale('en');
+          }
           if (date.format) {
             return moment(result).format(date.format);
           }

@@ -1,5 +1,5 @@
 type Author {
-    id: ID @hashed
+    id: ID
     name: String
     email: String
     books: [Book]

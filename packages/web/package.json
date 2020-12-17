@@ -8,8 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "graphql": "14.7.0",
     "next": "10.0.3",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "next-with-apollo": "5.1.0",
+    "apollo-boost": "0.4.9",
+    "@apollo/react-hooks": "4.0.0",
+    "next-plugin-graphql": "0.0.2",
+    "moment": "2.29.1"
   }
 }

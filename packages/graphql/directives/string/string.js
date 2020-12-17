@@ -1,5 +1,6 @@
 const { mapSchema, MapperKind, getDirectives } = require('@graphql-tools/utils');
 const { defaultFieldResolver, GraphQLString } = require('graphql');
+const stripHtml = require('string-strip-html');
 
 const changeCase = (string = '', type) => {
   if (typeof string !== 'string') return string;
@@ -29,7 +30,10 @@ function transformer(name) {
         };
         const { resolve = defaultFieldResolver } = fieldConfig;
         fieldConfig.resolve = async function (source, { string = {}, ...args }, context, info) {
-          const result = await resolve(source, args, context, info);
+          let result = await resolve(source, args, context, info);
+          if (string.stripHtml) {
+            result = stripHtml(result).result;
+          }
           if (string.case) {
             return changeCase(result, string.case);
           }

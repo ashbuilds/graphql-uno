@@ -5,6 +5,7 @@ enum _STRING_CASES {
 
 input _STRING {
     case: _STRING_CASES
+    stripHtml: Boolean
 }
 
 #directive @string(format: _STRING_CASES) on FIELD_DEFINITION | FIELD | SCALAR

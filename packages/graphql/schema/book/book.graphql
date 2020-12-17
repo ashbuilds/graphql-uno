@@ -1,5 +1,5 @@
 type Book {
-    id: ID @hashed
+    id: ID
     title: String
     description: String
     price: Float
@@ -7,10 +7,10 @@ type Book {
 }
 
 type Query {
-    book: Book
+    book(id: ID!): Book
     books: [Book]
 }
 
 type Mutation {
-    updateBook(id: ID! @unhashed): ID @hashed
+    updateBook(id: ID!): Book
 }

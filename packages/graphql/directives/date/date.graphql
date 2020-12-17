@@ -1,5 +1,6 @@
 input _DATE {
     format: String
+    locale: String
 }
 
 directive @date(date: _DATE) on FIELD_DEFINITION | FIELD | SCALAR
