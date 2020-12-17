@@ -33,3 +33,4 @@ yarn-error.log*
 # vercel
 .vercel
 /packages/graphql/build/
+/packages/web/.next/
